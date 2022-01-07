@@ -6,5 +6,8 @@
             "email": "a.n.baranov@outlook.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "bin": [
+        "bin/brain-games"
+      ]
 }
