@@ -4,6 +4,9 @@ install:
 brain-games:
 	php bin/brain-games
 
+brain-calc:
+	php bin/brain-calc
+
 validate:
 	composer validate
 
