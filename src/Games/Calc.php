@@ -14,8 +14,8 @@ function calc()
     $succes = true;
 
     for ($i = 0; $i < 3; $i++) {
-        $first_number = rand(0, 99);        
-        $operatorIndex = rand(0,2);
+        $first_number = rand(0, 99);
+        $operatorIndex = rand(0, 2);
 
         if ($operatorIndex === 2) {
             $second_number = rand(0, 9);
@@ -46,6 +46,6 @@ function calc()
     if ($succes) {
         Engine\writeCongratulations($userName);
     } else {
-        Engine\writeTryAgain($userName);  
+        Engine\writeTryAgain($userName);
     }
 }
