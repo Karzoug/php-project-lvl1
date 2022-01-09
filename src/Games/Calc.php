@@ -4,7 +4,7 @@ namespace Brain\Games\Calc;
 
 use Brain\Games\Engine;
 
-function calc()
+function run()
 {
     $userName = Engine\welcome();
     Engine\writeTask('What is the result of the expression?');
