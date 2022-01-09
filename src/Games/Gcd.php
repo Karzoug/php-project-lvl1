@@ -82,6 +82,6 @@ function get_gcd(int $m, int $n): int
             } else {
                 $m = ($m - $n) >> 1;
             }
-        }        
+        }
     } while (true);
 }
