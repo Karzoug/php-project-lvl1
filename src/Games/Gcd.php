@@ -22,7 +22,7 @@ function run()
 
         $rightAnswer = get_gcd($first_number, $second_number);
 
-        if (!Engine\qa($question, $rightAnswer)) {
+        if (!Engine\qa($question, (string)$rightAnswer)) {
             $succes = false;
             break;
         }

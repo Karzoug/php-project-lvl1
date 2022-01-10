@@ -25,7 +25,7 @@ function run()
         $progressionNumbers[$position] = "..";
         $question = implode(" ", $progressionNumbers);
 
-        if (!Engine\qa($question, $rightAnswer)) {
+        if (!Engine\qa($question, (string)$rightAnswer)) {
             $succes = false;
             break;
         }

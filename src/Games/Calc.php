@@ -35,9 +35,12 @@ function run()
             case 2:
                 $rightAnswer = $first_number * $second_number;
                 break;
+            default:
+                $rightAnswer = $first_number + $second_number;
+                break;
         }
 
-        if (!Engine\qa($question, $rightAnswer)) {
+        if (!Engine\qa($question, (string)$rightAnswer)) {
             $succes = false;
             break;
         }
