@@ -9,6 +9,7 @@
 * Определение наибольшего общего делителя.
 [![asciicast](https://asciinema.org/a/460812.svg)](https://asciinema.org/a/460812)
  * Определение простого числа.
+ [![asciicast](https://asciinema.org/a/461010.svg)](https://asciinema.org/a/461010)
 
 
 ### Hexlet tests and linter status:
