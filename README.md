@@ -4,6 +4,7 @@
 * Калькулятор: арифметические выражения, которые необходимо вычислить.
 [![asciicast](https://asciinema.org/a/460724.svg)](https://asciinema.org/a/460724)
 * Прогрессия: поиск пропущенных чисел в последовательности чисел.
+[![asciicast](https://asciinema.org/a/460998.svg)](https://asciinema.org/a/460998)
 * Определение четного числа.
 * Определение наибольшего общего делителя.
 [![asciicast](https://asciinema.org/a/460812.svg)](https://asciinema.org/a/460812)

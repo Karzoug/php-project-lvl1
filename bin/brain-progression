@@ -9,6 +9,6 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use Brain\Games\Gcd;
+use Brain\Games\Progression;
 
-Gcd\run();
+Progression\run();
