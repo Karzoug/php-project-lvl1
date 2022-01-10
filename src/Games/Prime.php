@@ -42,11 +42,19 @@ function isPrime(int $number): bool
         return true;
     }
 
+    if ($number === 1) {
+        return false;
+    }
+
     if ($number % 2 === 0) {
         return false;
     }
 
-    $arr = [2, ...range(3, sqrt($number), 2)];
+    if ($number >= 9) {
+        $arr = [2, ...range(3, sqrt($number), 2)];
+    } else {
+        $arr = [2, 3];
+    }
 
     foreach ($arr as $value) {
         if ($number % $value === 0) {
