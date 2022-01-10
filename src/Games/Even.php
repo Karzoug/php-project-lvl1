@@ -17,7 +17,7 @@ function run()
         $question = $number;
         $rightAnswer = ($number % 2 === 0) ? "yes" : "no";
 
-        if (!Engine\qa($question, $rightAnswer)) {
+        if (!Engine\qa((string)$question, $rightAnswer)) {
             $succes = false;
             break;
         }

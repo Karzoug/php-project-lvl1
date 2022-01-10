@@ -22,7 +22,7 @@ function run()
         $question = $number;
         $rightAnswer = isPrime($number) ? "yes" : "no";
 
-        if (!Engine\qa($question, $rightAnswer)) {
+        if (!Engine\qa((string)$question, $rightAnswer)) {
             $succes = false;
             break;
         }
