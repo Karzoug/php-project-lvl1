@@ -6,6 +6,7 @@
 * Прогрессия: поиск пропущенных чисел в последовательности чисел.
 [![asciicast](https://asciinema.org/a/460998.svg)](https://asciinema.org/a/460998)
 * Определение четного числа.
+[![asciicast](https://asciinema.org/a/461013.svg)](https://asciinema.org/a/461013)
 * Определение наибольшего общего делителя.
 [![asciicast](https://asciinema.org/a/460812.svg)](https://asciinema.org/a/460812)
  * Определение простого числа.

@@ -16,6 +16,9 @@ brain-progression:
 brain-prime:
 	php bin/brain-prime
 
+brain-even:
+	php bin/brain-even
+
 validate:
 	composer validate
 
