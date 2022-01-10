@@ -50,10 +50,12 @@ function isPrime(int $number): bool
         return false;
     }
 
-    if ($number >= 9) {
-        $arr = [2, ...range(3, sqrt($number), 2)];
-    } else {
-        $arr = [2, 3];
+    $arr = [];
+    $curr = 3;
+    $up_range = sqrt($number);
+    while ($curr <= $up_range) {
+        $arr[] = $curr;
+        $curr += 2;
     }
 
     foreach ($arr as $value) {
