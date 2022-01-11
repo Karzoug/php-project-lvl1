@@ -6,10 +6,8 @@ use Brain\Games\Engine;
 
 function run()
 {
-    $userName = Engine\welcome();
-    Engine\writeTask('What number is missing in the progression?');
-
-    $succes = true;
+    $task = 'What number is missing in the progression?';
+    $qa = [];
 
     for ($i = 0; $i < 3; $i++) {
         $position = rand(0, 9);
@@ -25,15 +23,8 @@ function run()
         $progressionNumbers[$position] = "..";
         $question = implode(" ", $progressionNumbers);
 
-        if (!Engine\qa($question, (string)$rightAnswer)) {
-            $succes = false;
-            break;
-        }
+        $qa[] = ['question' => $question, 'answer' => (string)$rightAnswer];
     }
 
-    if ($succes) {
-        Engine\writeCongratulations($userName);
-    } else {
-        Engine\writeTryAgain($userName);
-    }
+    Engine\run($task, $qa);
 }

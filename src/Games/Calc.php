@@ -6,12 +6,10 @@ use Brain\Games\Engine;
 
 function run()
 {
-    $userName = Engine\welcome();
-    Engine\writeTask('What is the result of the expression?');
+    $task = 'What is the result of the expression?';
+    $qa = [];
 
     $operators = ['+', '-', '*'];
-
-    $succes = true;
 
     for ($i = 0; $i < 3; $i++) {
         $first_number = rand(0, 99);
@@ -40,15 +38,8 @@ function run()
                 break;
         }
 
-        if (!Engine\qa($question, (string)$rightAnswer)) {
-            $succes = false;
-            break;
-        }
+        $qa[] = ['question' => $question, 'answer' => (string)$rightAnswer];
     }
 
-    if ($succes) {
-        Engine\writeCongratulations($userName);
-    } else {
-        Engine\writeTryAgain($userName);
-    }
+    Engine\run($task, $qa);
 }

@@ -6,10 +6,8 @@ use Brain\Games\Engine;
 
 function run()
 {
-    $userName = Engine\welcome();
-    Engine\writeTask('Answer "yes" if the number is even, otherwise answer "no".');
-
-    $succes = true;
+    $task = 'Answer "yes" if the number is even, otherwise answer "no".';
+    $qa = [];
 
     for ($i = 0; $i < 3; $i++) {
         $number = rand(0, 99);
@@ -17,15 +15,8 @@ function run()
         $question = $number;
         $rightAnswer = ($number % 2 === 0) ? "yes" : "no";
 
-        if (!Engine\qa((string)$question, $rightAnswer)) {
-            $succes = false;
-            break;
-        }
+        $qa[] = ['question' => (string)$question, 'answer' => $rightAnswer];
     }
 
-    if ($succes) {
-        Engine\writeCongratulations($userName);
-    } else {
-        Engine\writeTryAgain($userName);
-    }
+    Engine\run($task, $qa);
 }

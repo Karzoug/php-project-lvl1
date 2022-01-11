@@ -6,10 +6,8 @@ use Brain\Games\Engine;
 
 function run()
 {
-    $userName = Engine\welcome();
-    Engine\writeTask('Find the greatest common divisor of given numbers.');
-
-    $succes = true;
+    $task = 'Find the greatest common divisor of given numbers.';
+    $qa = [];
 
     for ($i = 0; $i < 3; $i++) {
         $first_number = rand(0, 99);
@@ -22,17 +20,10 @@ function run()
 
         $rightAnswer = get_gcd($first_number, $second_number);
 
-        if (!Engine\qa($question, (string)$rightAnswer)) {
-            $succes = false;
-            break;
-        }
+        $qa[] = ['question' => $question, 'answer' => (string)$rightAnswer];
     }
 
-    if ($succes) {
-        Engine\writeCongratulations($userName);
-    } else {
-        Engine\writeTryAgain($userName);
-    }
+    Engine\run($task, $qa);
 }
 
 // Бинарный алгоритм

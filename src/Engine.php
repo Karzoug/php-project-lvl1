@@ -5,15 +5,29 @@ namespace Brain\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function welcome(): string
+function run(string $task, array $qa)
 {
     line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    $userName = prompt('May I have your name?');
+    line("Hello, %s!", $userName);
 
-    return $name;
+    line($task);
+
+    $succes = true;
+    foreach ($qa as $value) {
+        if (!step($value['question'], $value['answer'])) {
+            $succes = false;
+            break;
+        }
+    }
+
+    if ($succes) {
+        line("Congratulations, {$userName}!");
+    } else {
+        line("Let's try again, {$userName}!");
+    }
 }
-function qa(string $question, string $rightAnswer): bool
+function step(string $question, string $rightAnswer): bool
 {
     line("Question: {$question}");
     $userAnswer = prompt('Your answer');
@@ -27,16 +41,4 @@ function qa(string $question, string $rightAnswer): bool
     }
 
     return false;
-}
-function writeTask(string $task)
-{
-    line($task);
-}
-function writeTryAgain(string $userName)
-{
-    line("Let's try again, {$userName}!");
-}
-function writeCongratulations(string $userName)
-{
-    line("Congratulations, {$userName}!");
 }

@@ -6,10 +6,7 @@ use Brain\Games\Engine;
 
 function run()
 {
-    $userName = Engine\welcome();
-    Engine\writeTask('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-    $succes = true;
+    $task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
     for ($i = 0; $i < 3; $i++) {
         $number = rand(0, 100);
@@ -22,17 +19,10 @@ function run()
         $question = $number;
         $rightAnswer = isPrime($number) ? "yes" : "no";
 
-        if (!Engine\qa((string)$question, $rightAnswer)) {
-            $succes = false;
-            break;
-        }
+        $qa[] = ['question' => (string)$question, 'answer' => $rightAnswer];
     }
 
-    if ($succes) {
-        Engine\writeCongratulations($userName);
-    } else {
-        Engine\writeTryAgain($userName);
-    }
+    Engine\run($task, $qa);
 }
 
 // Простой перебор делителей для определения простоты числа
